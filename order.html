@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Order</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/0d0ada2a98.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet"></head>
+<body>
+
+    <!--Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <i class="fa fa-solid fa-car" ></i>BGS WRAPS
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/design.html" class="navbar__links">Design</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/products.html" class="navbar__links">Products</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/services.html" class="navbar__links">Services</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/events.html" class="navbar__links">Events</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/order.html" class="navbar__links">Custom Order</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/contact.html" class="button">Make an Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Order Page -->
+    <section class="order">
+        <div class="order__header">
+            <h2>Custom Orders</h2>
+        </div>
+        <div class="order__container">
+            <div class="orderForm">
+                <form>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Phone</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>What will we be wrapping for you?</span>
+                    </div>
+
+                    <h3 class="name">Color and Finish Options</h2>
+                    <select class="option" name="color__finish">
+                        <option>Matte White</option>
+                        <option>Gloss White</option>
+                        <option>Matte Black</option>
+                        <option>Gloss Black</option>
+                        <option>Metallic</option>
+                        <option>Custom Graphics</option>
+                    </select>
+        
+                    <h3 class="name" id="designer">Will you need custom graphics designed for this project?</h2>
+                    <label class="radio">
+                        <input class="radio-one" type="radio" checked="checked" name="">
+                        <span class="checkmark"></span>
+                        Yes
+                    </label>
+                    <label class="radio">
+                        <input class="radio-two" type="radio" name="">
+                        <span class="checkmark"></span>
+                        No
+                    </label>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!--<section class="order">
+        <div class="order__form"><h1>Custom Order</h1></div>
+        <div class="order__main">
+            <form action="">
+                <div id="name">
+                    <h2 class="name">Name</h2>
+                    <input class="firstname" type="text" name="first_name"><br>
+                    <label class="firstlabel">First Name</label>
+                    <input class="lastname" type="text" name="last_name"><br>
+                    <label class="lastlabel">Last Name</label>
+                </div>
+                <h2 class="name">Phone Number</h2>
+                <input class="code" type="text" name="area_code">
+                <label class="area-code">Area Code</label>
+                <input class="number" type="text" name="phone">
+                <label class="phone-number">Phone Number</label>
+    
+                <h2 class="name">Email Address</h2>
+                <input class="email" type="text" name="email">
+    
+                <h2 class="name">What kind of project will we be wrapping for you?</h2>
+                <input class="wrap__project" type="text" name="wrap__project">
+    
+                <h2 class="name">Color and Finish Options</h2>
+                <select class="option" name="color__finish">
+                    <option>Matte White</option>
+                    <option>Gloss White</option>
+                    <option>Matte Black</option>
+                    <option>Gloss Black</option>
+                    <option>Metallic</option>
+                    <option>Custom Graphics</option>
+                </select>
+    
+                <h2 class="name" id="designer">Will you need a designer for this project?</h2>
+                <label class="radio">
+                    <input class="radio-one" type="radio" checked="checked" name="">
+                    <span class="checkmark"></span>
+                    Yes
+                </label>
+                <label class="radio">
+                    <input class="radio-two" type="radio" name="">
+                    <span class="checkmark"></span>
+                    No
+                </label>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>-->
+    <!-- Footer Section -->
+    <div class="footer__container">
+        <div class="footer__links">
+            <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                    <h2>Learn More</h2>
+                    <a href="/">FAQs</a>
+                    <a href="/">Leave us a review</a>
+                    <a href="/">Terms of Service</a>
+                </div>
+                <div class="footer__link--items">
+                    <h2>About Us</h2>
+                    <a href="/">BGS</a>
+                    <a href="/">Careers</a>
+                </div>
+            </div>
+            <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                    <h2>Contact Us</h2>
+                    <a href="/">Send us an email</a>
+                    <a href="/">Find us on Google Maps</a>
+                </div>
+            </div>
+        </div>
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo"><i class="fa fa-solid fa-car" ></i>BGS WRAPS</a>
+                </div>
+                <p class="website__rights">CW 2022. All rights reserved</p>
+                <div class="social__icons">
+                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

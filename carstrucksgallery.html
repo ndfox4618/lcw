@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars & Trucks Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="lightbox.min.css">
+    <script src="lightbox-plus-jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/0d0ada2a98.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet"></head>
+<body>
+
+    <!--Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <i class="fa fa-solid fa-car" ></i>BGS WRAPS
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/design.html" class="navbar__links">Design</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/products.html" class="navbar__links">Products</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/services.html" class="navbar__links">Services</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/events.html" class="navbar__links">Events</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/order.html" class="navbar__links">Custom Order</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/contact.html" class="button">Make an Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Cars and Trucks Gallery Page -->
+    <div class="gallery__content">
+        <div class="slider__body">
+            <div class="img__slider">
+                <div class="slide">
+                    <img src="/images/ct1.jpg" alt="">
+                </div>
+                <div class="slide active">
+                    <img src="/images/ct2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct3.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct4.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct5.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct6.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct7.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct8.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct9.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct10.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct11.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct12.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct13.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct14.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct15.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct16.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct17.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct18.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct19.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="/images/ct20.jpg" alt="">
+                </div>
+                <div class="slider__navigation">
+                    <div class="btn active"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                //Manual Navigation
+                var slides = document.querySelectorAll('.slide');
+                var btns = document.querySelectorAll('.btn');
+                let currentSlide = 1;
+
+                var manualNav = function(manual){
+                    slides.forEach((slide) => {
+                        slide.classList.remove('active');
+                    });
+
+                    btns.forEach((btn) => {
+                        btn.classList.remove('active');
+                    })
+
+                    slides[manual].classList.add('active');
+                    btns[manual].classList.add('active');
+                }
+
+                btns.forEach((btn, i) => {
+                    btn.addEventListener("click", () => {
+                        manualNav(i);
+                        currentSlide = i;
+                    });
+                });
+                //Autoplay Navigation
+                var repeat = function(activeClass){
+                    let active = document.getElementsByClassName('active');
+                    let i = 1;
+
+                    var repeater = () => {
+                        setTimeout(function(){
+                            [...active].forEach((activeSlide) => {
+                                activeSlide.classList.remove('active');
+                            });
+
+                            slides[i].classList.add('active');
+                            btns[i].classList.add('active');
+                            i++;
+
+                            if(slides.length == i){
+                                i=0;
+                            }
+                            if(i >= slides.length){
+                                return;
+                            }
+                            repeater();
+                        }, 10000);
+                    }
+                    repeater();
+                }
+                repeat();
+            </script>
+        </div>
+        <div class="gallery__body">
+            <div class="gallery">
+                <a href="/images/ct1.jpg" data-lightbox="cars&trucks"><img src="/images/ct1sm.jpg"></a>
+                <a href="/images/ct2.jpg" data-lightbox="cars&trucks"><img src="/images/ct2sm.jpg"></a>
+                <a href="/images/ct3.jpg" data-lightbox="cars&trucks"><img src="/images/ct3sm.jpg"></a>
+                <a href="/images/ct4.jpg" data-lightbox="cars&trucks"><img src="/images/ct4sm.jpg"></a>
+                <a href="/images/ct5.jpg" data-lightbox="cars&trucks"><img src="/images/ct5sm.jpg"></a>
+                <a href="/images/ct6.jpg" data-lightbox="cars&trucks"><img src="/images/ct6sm.jpg"></a>
+                <a href="/images/ct7.jpg" data-lightbox="cars&trucks"><img src="/images/ct7sm.jpg"></a>
+                <a href="/images/ct8.jpg" data-lightbox="cars&trucks"><img src="/images/ct8sm.jpg"></a>
+                <a href="/images/ct9.jpg" data-lightbox="cars&trucks"><img src="/images/ct9sm.jpg"></a>
+                <a href="/images/ct10.jpg" data-lightbox="cars&trucks"><img src="/images/ct10sm.jpg"></a>
+                <a href="/images/ct11.jpg" data-lightbox="cars&trucks"><img src="/images/ct11sm.jpg"></a>
+                <a href="/images/ct12.jpg" data-lightbox="cars&trucks"><img src="/images/ct12sm.jpg"></a>
+                <a href="/images/ct13.jpg" data-lightbox="cars&trucks"><img src="/images/ct13sm.jpg"></a>
+                <a href="/images/ct14.jpg" data-lightbox="cars&trucks"><img src="/images/ct14sm.jpg"></a>
+                <a href="/images/ct15.jpg" data-lightbox="cars&trucks"><img src="/images/ct15sm.jpg"></a>
+                <a href="/images/ct16.jpg" data-lightbox="cars&trucks"><img src="/images/ct16sm.jpg"></a>
+                <a href="/images/ct17.jpg" data-lightbox="cars&trucks"><img src="/images/ct17sm.jpg"></a>
+                <a href="/images/ct18.jpg" data-lightbox="cars&trucks"><img src="/images/ct18sm.jpg"></a>
+                <a href="/images/ct19.jpg" data-lightbox="cars&trucks"><img src="/images/ct19sm.jpg"></a>
+                <a href="/images/ct20.jpg" data-lightbox="cars&trucks"><img src="/images/ct20sm.jpg"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer__container">
+        <div class="footer__links">
+            <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                    <h2>Learn More</h2>
+                    <a href="/">How it works</a>
+                    <a href="/">FAQs</a>
+                    <a href="/">Leave us a review</a>
+                    <a href="/">Terms of Service</a>
+                </div>
+                <div class="footer__link--items">
+                    <h2>About Us</h2>
+                    <a href="/">BGS</a>
+                    <a href="/">Careers</a>
+                </div>
+            </div>
+            <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                    <h2>Contact Us</h2>
+                    <a href="/">Send us an email</a>
+                    <a href="/">Find us on Google Maps</a>
+                </div>
+            </div>
+        </div>
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo"><i class="fa fa-solid fa-car" ></i>BGS WRAPS</a>
+                </div>
+                <p class="website__rights">CW 2022. All rights reserved</p>
+                <div class="social__icons">
+                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="/" class="social__icon--link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

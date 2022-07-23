@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Wraps</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/0d0ada2a98.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet"></head>
+<body>
+
+    <!--Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <i class="fa fa-solid fa-car" ></i>BGS WRAPS
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/index.html" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/design.html" class="navbar__links">Design</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/products.html" class="navbar__links">Products</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/services.html" class="navbar__links">Services</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/events.html" class="navbar__links">Events</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/order.html" class="navbar__links">Custom Order</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/contact.html" class="button">Make an Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Home Page -->
+    <div class="moving__background">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>CUSTOM WRAP DESIGNS</h1>
+                <p>An elite edge for your luxury vehicle...</p>
+            </div>
+            <div class="slider__body">
+                <div class="img__slider">
+                    <div class="slide">
+                        <img src="/images/ct1.jpg" alt="">
+                    </div>
+                    <div class="slide active">
+                        <img src="/images/ct2.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/ct3.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/ct4.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="/images/ct5.jpg" alt="">
+                    </div>
+                    <div class="slider__navigation">
+                        <div class="btn active"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    //Manual Navigation
+                    var slides = document.querySelectorAll('.slide');
+                    var btns = document.querySelectorAll('.btn');
+                    let currentSlide = 1;
+
+                    var manualNav = function(manual){
+                        slides.forEach((slide) => {
+                            slide.classList.remove('active');
+                        });
+
+                        btns.forEach((btn) => {
+                            btn.classList.remove('active');
+                        })
+
+                        slides[manual].classList.add('active');
+                        btns[manual].classList.add('active');
+                    }
+
+                    btns.forEach((btn, i) => {
+                        btn.addEventListener("click", () => {
+                            manualNav(i);
+                            currentSlide = i;
+                        });
+                    });
+                    //Autoplay Navigation
+                    var repeat = function(activeClass){
+                        let active = document.getElementsByClassName('active');
+                        let i = 1;
+
+                        var repeater = () => {
+                            setTimeout(function(){
+                                [...active].forEach((activeSlide) => {
+                                    activeSlide.classList.remove('active');
+                                });
+
+                                slides[i].classList.add('active');
+                                btns[i].classList.add('active');
+                                i++;
+
+                                if(slides.length == i){
+                                    i=0;
+                                }
+                                if(i >= slides.length){
+                                    return;
+                                }
+                                repeater();
+                            }, 10000);
+                        }
+                        repeater();
+                    }
+                    repeat();
+                </script>
+            </div>
+        </div>
+        <!--Design and Gallery -->
+        <div class="card__container">
+            <div class="card">
+                <div class="card__content">
+                    <h2 class="card__title">Cars & Trucks</h2>
+                    <p class="card__body">Level up your vehicle...</p>
+                    <a href="/carstrucksgallery.html" class="card__button">View Gallery</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__content">
+                    <h2 class="card__title">Recreational Vehicles</h2>
+                    <p class="card__body">Bring new life to your toys...</p>
+                    <a href="/recreationalvehiclesgallery.html" class="card__button">View Gallery</a>
+                </div>            
+            </div>
+            <div class="card">
+                <div class="card__content">
+                    <h2 class="card__title">Corporate Designs</h2>
+                    <p class="card__body">Projects as big as your ambitions...</p>
+                    <a href="/corporatedesignsgallery.html" class="card__button">View Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer__container">
+        <div class="footer__links">
+            <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                    <h2>Learn More</h2>
+                    <a href="/">FAQs</a>
+                    <a href="https://www.google.com/maps/place/Bgs/@41.7303794,-85.9938456,17z/data=!4m14!1m6!3m5!1s0x8816dcf556d18fc7:0xd3236b18649fc004!2sPerformance+Painting+Systems!8m2!3d41.7299084!4d-85.9916555!3m6!1s0x8816dc5ff6f49d25:0xd095611f7d498143!8m2!3d41.7309651!4d-85.9910384!9m1!1b1">Leave us a review</a>
+                    <a href="/">Terms of Service</a>
+                </div>
+                <div class="footer__link--items">
+                    <h2>About Us</h2>
+                    <a href="https://burlingtongraphics.com/">BGS</a>
+                    <a href="/">Careers</a>
+                </div>
+            </div>
+            <div class="footer__link--wrapper">
+                    <div class="footer__link--items">
+                    <h2>Contact Us</h2>
+                    <a href="/contact.html">Send us an email</a>
+                    <a href="https://www.google.com/maps/place/Bgs/@41.7303794,-85.9938456,17z/data=!4m12!1m6!3m5!1s0x8816dcf556d18fc7:0xd3236b18649fc004!2sPerformance+Painting+Systems!8m2!3d41.7299084!4d-85.9916555!3m4!1s0x8816dc5ff6f49d25:0xd095611f7d498143!8m2!3d41.7309651!4d-85.9910384">Find us on Google Maps</a>
+                </div>
+            </div>
+        </div>
+        <div class="social__media">
+            <div class="social__media--wrap">
+                <div class="footer__logo">
+                    <a href="/" id="footer__logo"><i class="fa fa-solid fa-car" ></i>BGS WRAPS</a>
+                </div>
+                <p class="website__rights">CW 2022. All rights reserved</p>
+                <div class="social__icons">
+                    <a href="https://facebook.com" class="social__icon--link" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://linkedin.com" class="social__icon--link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://youtube.com" class="social__icon--link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
